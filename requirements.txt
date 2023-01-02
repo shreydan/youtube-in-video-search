@@ -1,0 +1,7 @@
+transformers
+sentence-transformers
+sentence-splitter
+pytorch
+youtube-transcript-api
+numpy
+scikit-learn
