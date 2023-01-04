@@ -41,8 +41,7 @@ def fetch_transcript(url: str) -> list:
     
     try:
         transcript:list = YouTubeTranscriptApi.get_transcript(video_id=video_id)
-        # transcript = zip_transcript(transcript)
-        transcript = full_text(transcript)
+
     except YouTubeRequestFailed:
         return None
     
@@ -53,9 +52,10 @@ def fetch_transcript(url: str) -> list:
 if __name__ == '__main__':
     sample = 'https://www.youtube.com/watch?v=1nLHIM2IPRY'
     transcript = fetch_transcript(url=sample)
-
+    transcript = full_text(transcript)
     groups = group_sentences(transcript, stride=10)
+    print(groups)
     
-    with open('sample_group.txt','w') as f:
-        for group in groups:
-            f.write(f"{group}\n\n")
+    # with open('sample_group.txt','w') as f:
+    #     for group in groups:
+    #         f.write(f"{group}\n\n")

@@ -1,6 +1,10 @@
 {
-  "_name_or_path": "microsoft/MiniLM-L12-H384-uncased",
+  "_name_or_path": "/root/.cache/torch/sentence_transformers/sentence-transformers_all-MiniLM-L12-v2/",
+  "architectures": [
+    "BertModel"
+  ],
   "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
   "gradient_checkpointing": false,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.1,
@@ -14,7 +18,8 @@
   "num_hidden_layers": 12,
   "pad_token_id": 0,
   "position_embedding_type": "absolute",
-  "transformers_version": "4.8.2",
+  "torch_dtype": "float32",
+  "transformers_version": "4.20.1",
   "type_vocab_size": 2,
   "use_cache": true,
   "vocab_size": 30522
