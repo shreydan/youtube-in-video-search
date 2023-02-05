@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "youtube-qa"
+version = "0.1.0"
+description = "simple youtube Q/A with timestamps"
+authors = ["shreydan <iamshreydan@gmail.com>"]
+readme = "README.md"
+packages = [{include = "youtube_qa"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+transformers = "^4.26.0"
+sentence-transformers = "^2.2.2"
+youtube-transcript-api = "^0.5.0"
+numpy = "^1.24.1"
+scikit-learn = "^1.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
