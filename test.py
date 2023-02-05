@@ -7,13 +7,14 @@ from preprocessing import create_similarity_text, stride_sentences
 if __name__ == '__main__':
     sample = 'https://www.youtube.com/watch?v=t6V9i8fFADI'
     sample2 = 'https://www.youtube.com/watch?v=1nLHIM2IPRY'
-    transcript = fetch_transcript(url=sample2)
+    sample3 = 'https://www.youtube.com/watch?v=nIoXOplUvAw'
+    transcript = fetch_transcript(url=sample3)
     _,transcript = zip_transcript(transcript)
     groups = stride_sentences(transcript,stride=10)
-
+    print(groups)
     model = Engine(groups=groups)
     
-    q = 'number of holes in the injector plate'
+    q = 'hotkey to focus object'
     ans = model.ask(q)
     
     print(q)
