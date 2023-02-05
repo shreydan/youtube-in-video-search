@@ -1,6 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi, YouTubeRequestFailed
 import regex as re
-from preprocessing import group_sentences, stride_sentences
+from preprocessing import stride_sentences
 
 def validate_youtube_link(url: str) -> str:
     """
@@ -57,14 +57,6 @@ if __name__ == '__main__':
     
     times, texts = zip_transcript(transcript)
     texts = stride_sentences(texts)
-    
-
-    transcript = full_text(transcript)
-    groups = group_sentences(transcript, stride=10)
-    
-    print(len(texts),len(groups))
-    print(texts[0],'\n\n')
-    print(groups[0])
     
     # with open('sample_group.txt','w') as f:
     #     for group in groups:

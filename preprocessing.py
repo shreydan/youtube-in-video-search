@@ -1,14 +1,3 @@
-from sentence_splitter import split_text_into_sentences
-
-
-def group_sentences(text:str, stride:int=10):
-    sentences = split_text_into_sentences(text,language='en')
-
-    groups = [sentences[i:i+stride] for i in range(0, len(sentences), stride)]
-    groups = [' '.join(group).strip() for group in groups]
-    return groups
-
-
 def stride_sentences(texts:list, stride=10):
     groups = [texts[i:i+stride] for i in range(0, len(texts), stride)]
     groups = [' '.join(group).strip() for group in groups]
