@@ -5,20 +5,14 @@
 
 - ~~fetch transcript~~
 - ~~combine transcripts into groups~~
-- ~~choose model: `all-MiniLM-L12-v2`~~
-- semantic search on transcripts
+- ~~choose Q/A model: `deepset/tinyroberta-squad2`~~
+- ~~choose semantic search model: `all-MiniLM-L12-v2`~~
+- ~~input question~~
+- ~~get answer to the question~~
+- ~~semantic search on transcripts based on Q+A~~
 - match results to the time stamp
 - control youtube player based on the time stamp
 
-
-```
-methodology:
-
--> with stride 10, group sentences. a 60min video has around 150-160 groups with 10 sentences each
--> get the group with highest cosine similarity
--> choose the sentence with highest cosine similarity in that group
--> return time-stamp of the first sentence
-```
 
 ```
 In-progress 🚧️
