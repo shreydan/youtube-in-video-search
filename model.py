@@ -7,6 +7,7 @@ from transformers import pipeline
 from preprocessing import stride_sentences
 from fetch_transcript import zip_transcript
 
+
 class Engine:
     def __init__(self, transcript:list) -> None:
 
@@ -20,13 +21,17 @@ class Engine:
         self.sim_model_path = self.base_path / self.sim_model_name
         self.sim_model = SentenceTransformer(self.sim_model_path)
         
-        self.timestamps, texts = zip_transcript(transcript).values()
-        self.text_groups = stride_sentences(texts)
+        self.timestamps, self.texts = zip_transcript(transcript).values()
+
+        self.stride = 10
+        self.text_groups = stride_sentences(self.texts,self.stride)
         
         self.embeddings = self._encode_transcript()
 
+
     def _encode_transcript(self):
         return self.sim_model.encode(self.text_groups)
+
 
     def ask(self, question_text:str):
 
@@ -46,7 +51,9 @@ class Engine:
         similarities = similarities.reshape(-1)
         indices = list(torch.argsort(similarities))
         indices = [idx.item() for idx in indices[::-1]][:top_k]
-        return indices
+        groups = [self.text_groups[i] for i in indices]
+        timestamps = [self.timestamps[self.stride*i] for i in indices]
+        return groups, timestamps
 
 
 if __name__ == '__main__':
