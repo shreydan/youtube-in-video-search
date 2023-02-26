@@ -12,3 +12,7 @@ def dequestionize(question:str):
 def create_similarity_text(question:str, answer: str):
     question = dequestionize(question)
     return f"{answer} {question}"
+
+def create_result_url(base_url,timestamp):
+    full_url = f"{base_url}&t={int(timestamp)}s"
+    return full_url
