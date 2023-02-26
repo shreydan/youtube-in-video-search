@@ -1,11 +1,14 @@
-import torch
-from transformers import pipeline
-from sentence_transformers import SentenceTransformer
-from sentence_transformers.util import cos_sim
 from pathlib import Path
 
+import torch
+from sentence_transformers import SentenceTransformer
+from sentence_transformers.util import cos_sim
+from transformers import pipeline
+from preprocessing import stride_sentences
+from fetch_transcript import zip_transcript
+
 class Engine:
-    def __init__(self, groups:list) -> None:
+    def __init__(self, transcript:list) -> None:
 
         self.base_path = Path('./models')
 
@@ -17,7 +20,8 @@ class Engine:
         self.sim_model_path = self.base_path / self.sim_model_name
         self.sim_model = SentenceTransformer(self.sim_model_path)
         
-        self.text_groups = groups
+        self.timestamps, texts = zip_transcript(transcript).values()
+        self.text_groups = stride_sentences(texts)
         
         self.embeddings = self._encode_transcript()
 
@@ -36,12 +40,12 @@ class Engine:
         return result['answer']
 
 
-    def find_similar(self, txt:str):
+    def find_similar(self, txt:str, top_k=1):
         txt = self.sim_model.encode(txt)
         similarities:torch.Tensor = cos_sim(txt,self.embeddings)
         similarities = similarities.reshape(-1)
         indices = list(torch.argsort(similarities))
-        indices = [idx.item() for idx in indices[::-1]]
+        indices = [idx.item() for idx in indices[::-1]][:top_k]
         return indices
 
 

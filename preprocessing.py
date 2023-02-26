@@ -5,8 +5,8 @@ def stride_sentences(texts:list, stride=10):
 
 
 def dequestionize(question:str):
-    question = [word for word in question.split() if word.lower() not in ['what','where','how','who','why']]
-    return ' '.join(question).replace('?','').strip()
+    question_words = [word for word in question.split() if word.lower() not in ['what','where','how','who','why']]
+    return ' '.join(question_words).replace('?','').strip()
 
 
 def create_similarity_text(question:str, answer: str):
