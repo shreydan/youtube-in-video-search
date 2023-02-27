@@ -1,6 +1,6 @@
 # 📹️ Youtube Q&A Search
 
-![video](https://i.imgur.com/qbSVSi0.mp4)
+https://user-images.githubusercontent.com/21237364/221598257-36aedf02-dd17-46b0-b494-67fabe9c8e7d.mp4
 
 ### Try it out at [HuggingFace Spaces](https://huggingface.co/spaces/shreydan/youtube-QandA)
 (it's kinda slow as it's on free-tier, would recommend running locally)
