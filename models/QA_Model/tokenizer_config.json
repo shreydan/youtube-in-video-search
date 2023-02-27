@@ -1,16 +1,67 @@
 {
   "add_prefix_space": false,
-  "bos_token": "<s>",
-  "cls_token": "<s>",
-  "eos_token": "</s>",
+  "bos_token": {
+    "__type": "AddedToken",
+    "content": "<s>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "cls_token": {
+    "__type": "AddedToken",
+    "content": "<s>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "do_lower_case": false,
+  "eos_token": {
+    "__type": "AddedToken",
+    "content": "</s>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
   "errors": "replace",
-  "mask_token": "<mask>",
+  "full_tokenizer_file": null,
+  "mask_token": {
+    "__type": "AddedToken",
+    "content": "<mask>",
+    "lstrip": true,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
   "model_max_length": 512,
-  "name_or_path": "deepset/tinyroberta-squad2",
-  "pad_token": "<pad>",
-  "sep_token": "</s>",
-  "special_tokens_map_file": null,
+  "name_or_path": "deepset/roberta-base-squad2",
+  "pad_token": {
+    "__type": "AddedToken",
+    "content": "<pad>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "sep_token": {
+    "__type": "AddedToken",
+    "content": "</s>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "special_tokens_map_file": "/root/.cache/huggingface/hub/models--deepset--roberta-base-squad2/snapshots/d39b8d4166b0683451bbce6f047de1a238c0b5bf/special_tokens_map.json",
   "tokenizer_class": "RobertaTokenizer",
   "trim_offsets": true,
-  "unk_token": "<unk>"
+  "unk_token": {
+    "__type": "AddedToken",
+    "content": "<unk>",
+    "lstrip": false,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  }
 }
