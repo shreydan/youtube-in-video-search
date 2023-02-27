@@ -1,5 +1,8 @@
 # 📹️ Youtube Q&A Search
 
+### Try it out at [HuggingFace Spaces](https://huggingface.co/spaces/shreydan/youtube-QandA)
+(it's kinda slow as it's on free-tier, would recommend running locally)
+
 ```
            HOW IT WORKS :)
 
