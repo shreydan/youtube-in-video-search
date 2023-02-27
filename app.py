@@ -6,8 +6,8 @@ from fetch_transcript import fetch_transcript
 from preprocessing import create_similarity_text, create_result_url
 
 with st.container():
-    st.title('YouTube In-Video Search')
-    st.write('Perform extractive Q&A and semantic search to watch what you want.')
+    st.title('YouTube Q&A Search')
+    st.write('Ask YouTube videos questions and get your answers :)')
 
 with st.container():
 
